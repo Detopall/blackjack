@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BlackJack</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css" /> 
+	<link rel="stylesheet" type="text/css" href="assets/css/screen.css" /> 
+
+	<script src="assets/js/storage-handler.js"></script>
+	<script src="assets/js/ending.js"></script>
+	<script src="assets/js/game-actions.js"></script>
+	<script src="assets/js/wager-money.js"></script>
+	<script src="assets/js/random-value.js"></script>
+	<script src="assets/js/script.js"></script>
+
+</head>
+<body>
+	<header> BlackJack</header>
+	<div id="score">
+		<!-- inject score with 3 p tags and reset button-->
+	</div>
+
+	<main>
+		<article id="player">
+			<div class="cards">
+				<p></p>
+				<img class="ace" src="images/ace-diamonds.png" alt="ace-diamonds" title="ace-diamonds">
+			</div>
+			<div class="actions">
+				<button type="button">HIT</button>
+				<button type="button">STAND</button>
+				<button type="button">SURRENDER</button>
+			</div>
+		</article>
+
+		<article id="dealer">
+			<div class="cards">
+				<p></p>
+				<img class="ace" src="images/ace.png" alt="ace" title="ace">
+				<div id="wager">
+					<!-- wager button and money display-->
+				</div>
+			</div>
+		</article>
+	</main>
+
+	<div id="outcome" class="hidden">
+		<!-- add img of winning or losing -->
+		<img alt="L" class="lost hidden" title="outcome" src="images/losing-screen.png">
+		<img alt="W" class="won hidden" title="outcome" src="images/winning-screen.png">
+		<img alt="D" class="draw hidden" title="outcome" src="images/draw-screen.png">
+		<button type="button" class="again"> Play Again? </button>
+	</div>
+</body>
+</html>
