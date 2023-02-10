@@ -1,14 +1,12 @@
 "use strict";
 
 function checkIfPayed(e){
-	e.preventDefault();
 	const wagerBtn = document.querySelector("#wager-btn");
 	if (parseInt(_wager) > parseInt(_money) || e.target !== wagerBtn) return;
 
 	enableActionButtons();
 	startGame();
 	wagerBtn.disabled = true;
-	
 }
 
 function startGame(){
@@ -33,7 +31,19 @@ function increaseOrDecreaseWager(e){
 }
 
 function decideOnWager(wagerDecision){
-	localStorage.setItem("wager", `${parseInt(_wager) + wagerDecision}`);
+	saveToStorage("wager", `${parseInt(_wager) + wagerDecision}`);
+	location.reload();
+}
+
+function wagerAllIn(e){
+	if (!e.target.matches("button#all-in")) return;
+	saveToStorage("wager", `${parseInt(_money)}`);
+	location.reload();
+}
+
+function wagerZero(e){
+	if (!e.target.matches("button#zero")) return;
+	saveToStorage("wager", 0);
 	location.reload();
 }
 

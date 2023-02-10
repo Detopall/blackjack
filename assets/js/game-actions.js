@@ -1,13 +1,23 @@
 "use strict";
 
+function checkOver21Player(){
+	if (!_gameRunning) return;
+	const playerValue = parseInt(document.querySelector("#player .cards p").innerHTML);
+	if (playerValue === 21) {standAction(); return;}
+	if (playerValue < 21) return;
+	saveData();
+	userOutcome(_losing);
+	_gameRunning = false;
+}
+
 function actions(e){
 	const player = document.querySelector("#player .cards p");
 	if (e.target.innerHTML === "HIT"){
-		hitAction(e, player);
+		hitAction(player);
 	}
 
 	if (e.target.innerHTML === "STAND"){
-		standAction(e);
+		standAction();
 	}
 
 	if (e.target.innerHTML === "SURRENDER"){
@@ -16,8 +26,7 @@ function actions(e){
 	}
 }
 
-function hitAction(e, target){
-	e.preventDefault();
+function hitAction(target){
 	let cardValue = parseInt(target.innerHTML);
 	let newCard = drawCard();
 	target.innerHTML = "";
@@ -25,18 +34,17 @@ function hitAction(e, target){
 	saveData();
 }
 
-function standAction(e){
-	e.preventDefault();
+function standAction(){
 	document.querySelectorAll("#player .actions button").forEach(btn => {
 		btn.disabled = true;
 	});
-	startGameDealer(e);
+	startGameDealer();
 }
 
-function startGameDealer(e){
+function startGameDealer(){
 	const dealer = document.querySelector("#dealer .cards p");
 	while (loadFromStorage("dealerValue") < 17){
-		hitAction(e, dealer);
+		hitAction(dealer);
 	}
 	checkOutcome();
 }

@@ -16,7 +16,7 @@ function userOutcome(outcome){
 	document.querySelector("#outcome").classList.remove("hidden");
 	document.querySelector(`#outcome img[alt='${outcome}']`).classList.remove("hidden");
 
-	localStorage.setItem(`${outcome}`, parseInt(localStorage.getItem(`${outcome}`))+1);
+	localStorage.setItem(`${outcome}`, parseInt(loadFromStorage(`${outcome}`))+1);
 	checkWagerOutcome(outcome);
 	_gameRunning = false;
 }
@@ -34,9 +34,9 @@ function checkWagerOutcome(outcome){
 
 function getWagerMoney(outcome){
 	let currentMoney = document.querySelector("#wager span");
-	currentMoney.innerHTML = `$${parseInt(_money) + (parseInt(outcome)*parseInt(_wager))}`;
-	localStorage.setItem(`money`, parseInt(localStorage.getItem(`money`))+(outcome*parseInt(_wager)));
-} 
+	currentMoney.innerHTML = `$ ${parseInt(_money) + (parseInt(outcome)*parseInt(_wager))}`;
+	saveToStorage("money", parseInt(loadFromStorage("money"))+(outcome*parseInt(_wager)));
+}
 
 function replayGame(e){
 	e.preventDefault();
@@ -44,3 +44,13 @@ function replayGame(e){
 	location.reload();
 }
 
+function resetGame(e){
+	e.preventDefault();
+	if (!e.target.closest("#score button")) return;
+	saveToStorage("W", 0);
+	saveToStorage("D", 0);
+	saveToStorage("L", 0);
+	saveToStorage("money", 1000);
+	saveToStorage("wager", 100);
+	location.reload();
+}
