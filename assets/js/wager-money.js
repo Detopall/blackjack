@@ -36,13 +36,13 @@ function decideOnWager(wagerDecision){
 }
 
 function wagerAllIn(e){
-	if (!e.target.matches("button#all-in")) return;
+	if (!e.target.matches("#all-in")) return;
 	saveToStorage("wager", `${parseInt(_money)}`);
 	location.reload();
 }
 
 function wagerZero(e){
-	if (!e.target.matches("button#zero")) return;
+	if (!e.target.matches("n#zero")) return;
 	saveToStorage("wager", 0);
 	location.reload();
 }

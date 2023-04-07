@@ -4,12 +4,12 @@
 /* GENERAL */
 
 body {
-	margin: 7rem 6rem;
-	border: solid black 0.5rem;
+	width: 100vw;
+	height: 100vh;
 	font-family: 'Anton', sans-serif;
 	font-size: 1rem;
 	text-align: center;
-	overflow: hidden;
+	background-color: lightgrey;
 }
 
 header {
@@ -78,10 +78,21 @@ span {
 	padding: 5rem;
 }
 
+.cards img {
+	width: 15rem;
+	height: 15rem;
+}
+
 .actions {
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
+}
+
+.wager-buttons {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
 }
 
 /* BUTTONS */
@@ -90,7 +101,7 @@ button {
 	background-color: #4CAF50;
 	color: white;
 	font-weight: bold;
-	padding: 0.25rem 0.90rem;
+	padding: 0.6rem;
 	display: inline-block;
 	margin: 0.25rem 0.125rem;
 	cursor: pointer;
@@ -112,7 +123,7 @@ button:disabled {
 .lost, .won, .draw {
 	position: absolute;
 	top: 15rem;
-	left: 15rem;
+	left: calc(50% - 15rem);
 	width: 30rem;
 	opacity: 0.6;
 }

@@ -58,10 +58,12 @@ function displayMoney(){
 				<br>
 				<button type='button' id='wager-btn'> Wager money ($${_wager}) </button>
 				<br>
-				<button id="zero">0</button>
-				<button type='button' id='down'> &#8595; </button>
-				<button type='button' id='up'> &#8593; </button>
-				<button id="all-in">All In</button>`;
+				<div class="wager-buttons">
+					<button id="zero">0</button>
+					<button id='down'> &#8595; </button>
+					<button id='up'> &#8593; </button>
+					<button id="all-in">All In</button>
+				<div>`;
 	wagerDiv.insertAdjacentHTML("beforeend", html);
 }
 
