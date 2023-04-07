@@ -23,11 +23,28 @@ main {
 	justify-content: space-around;
 }
 
+
 p {
 	font-size: 7rem;
 	position: absolute;
 	margin-left: 1.5rem;
 	margin-top: 2rem;
+}
+
+#info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#info p {
+	font-size: 3rem;
+	margin: 2rem;
+	position: inherit;
+}
+
+#info p:first-child {
+	color: red;
 }
 
 #player p {
