@@ -23,13 +23,14 @@ function userOutcome(outcome){
 
 function checkWagerOutcome(outcome){
 	console.log(outcome);
-	if (outcome === "W") {
+	if (outcome === _winning) {
 		getWagerMoney(1);
-	} else if (outcome === "L") {
+	} else if (outcome === _losing) {
 		getWagerMoney(-1);
 	} else {
 		getWagerMoney(0);
 	}
+	document.querySelector("#try-again").classList.remove("hidden");
 }
 
 function getWagerMoney(outcome){
@@ -40,7 +41,7 @@ function getWagerMoney(outcome){
 
 function replayGame(e){
 	e.preventDefault();
-	if (!e.target.closest("#outcome button")) return;
+	if (!e.target.closest("#try-again")) return;
 	location.reload();
 }
 

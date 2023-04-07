@@ -23,7 +23,7 @@ function startGame(){
 function increaseOrDecreaseWager(e){
 	if (e.target.closest("#up")){
 		if (parseInt(_money) <= parseInt(_wager)) return;
- 		decideOnWager(100);
+		decideOnWager(100);
 	} else if (e.target.closest("#down")){
 		if (parseInt(_money) === 0 || parseInt(_wager) <= 0) return;
 		decideOnWager(-100);

@@ -1,20 +1,12 @@
 "use strict";
 
 function loadOnReload(){
-	//checkIfWagerIsHigher();
 	saveData();
 	checkLocalStorage();
 	displayScore();
 	displayMoney();
 	checkIfEnoughMoney();
 }
-
-/*function checkIfWagerIsHigher(){
-	if (_wager > _money){
-		saveToStorage("money", parseInt(_wager));
-	}
-}
-*/
 
 function saveData(){
 	const playerValue = parseInt(document.querySelector("#player .cards p").innerHTML);
