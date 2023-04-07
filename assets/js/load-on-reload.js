@@ -66,6 +66,6 @@ function checkIfEnoughMoney(){
 	const score = document.querySelector("#score");
 
 	main.classList.add("hidden");
-	const insufficientFunds = `<img class="insufficient-funds" src="/images/insufficient-funds.png" alt="insufficient-funds" title="insufficient-funds">`;
+	const insufficientFunds = `<img class="insufficient-funds" src="images/insufficient-funds.png" alt="insufficient-funds" title="insufficient-funds">`;
 	score.insertAdjacentHTML("afterend", insufficientFunds);
 }
